@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Survey eBook Complete</title>
+<style>
+:root{--navy:#0b1f33;--blue:#0b74de;--cyan:#12b5cb;--green:#16a34a;--orange:#f59e0b;--red:#ef4444;--bg:#f5f9ff;--card:#fff;--text:#182230;--muted:#667085;--line:#d8e3ef;--shadow:0 18px 50px rgba(11,31,51,.12);--radius:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Sarabun","Noto Sans Thai","Segoe UI",Tahoma,sans-serif;color:var(--text);background:linear-gradient(180deg,#eaf6ff 0%,#fff 26%,#f8fbff 100%);line-height:1.75}a{color:inherit}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topbar-inner{max-width:1200px;margin:auto;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:900;color:var(--navy);display:flex;align-items:center;gap:10px}.brand-badge{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:white}.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{text-decoration:none;font-size:14px;padding:7px 10px;border-radius:999px;color:var(--muted);font-weight:700}.nav a:hover{background:#eef6ff;color:var(--blue)}.progress-wrap{height:6px;background:#e8eef6}.progress-bar{height:6px;width:0%;background:linear-gradient(90deg,var(--blue),var(--green));transition:.2s}
+.hero{min-height:88vh;display:grid;place-items:center;padding:70px 18px 46px;background:radial-gradient(circle at 18% 15%,rgba(18,181,203,.28),transparent 34%),radial-gradient(circle at 82% 30%,rgba(11,116,222,.22),transparent 34%),linear-gradient(135deg,#0b1f33 0%,#123e66 58%,#0b74de 100%);color:white;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;right:-160px;bottom:-240px;width:560px;height:560px;border-radius:50%;background:rgba(255,255,255,.09)}.hero-grid{max-width:1200px;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;position:relative;z-index:1}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px;font-size:15px;margin-bottom:20px}h1{font-size:clamp(34px,5vw,64px);line-height:1.12;margin:0 0 18px;font-weight:1000}.subtitle{font-size:clamp(18px,2.2vw,25px);opacity:.94;margin:0 0 30px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:999px;padding:12px 18px;font-weight:900;text-decoration:none;cursor:pointer;transition:.2s;font-family:inherit}.btn-primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;box-shadow:0 12px 24px rgba(11,116,222,.22)}.hero .btn-primary{background:#fff;color:var(--blue)}.btn-secondary{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.26)}.btn-ghost{background:#eef6ff;color:var(--blue);margin-left:8px}.btn:hover{transform:translateY(-2px)}
+.cover-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:32px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.22)}.image-slot{min-height:280px;border:2px dashed rgba(255,255,255,.65);border-radius:24px;display:grid;place-items:center;text-align:center;padding:26px;background:rgba(255,255,255,.08)}.image-slot.dark{border-color:#b9d7f5;background:#f4f9ff;color:var(--navy);min-height:230px}.image-slot small{display:block;opacity:.85;margin-top:8px}
+main{max-width:1200px;margin:auto;padding:42px 18px 80px}section.lesson{margin:34px 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.section-head{padding:28px 30px;background:linear-gradient(135deg,#f7fbff,#fff);border-bottom:1px solid var(--line)}.section-kicker{font-weight:1000;color:var(--blue);letter-spacing:.02em}h2{font-size:clamp(26px,3.2vw,40px);line-height:1.25;margin:8px 0 0;color:var(--navy)}h3{font-size:24px;color:var(--navy);margin:22px 0 8px}.content{padding:30px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fff}.note{border-left:6px solid var(--blue);background:#eef7ff;padding:16px 18px;border-radius:14px;margin:18px 0}.warning{border-left:6px solid var(--orange);background:#fff7e6;padding:16px 18px;border-radius:14px;margin:18px 0}.success{border-left:6px solid var(--green);background:#ecfdf5;padding:16px 18px;border-radius:14px;margin:18px 0}
+.steps{counter-reset:step;display:grid;gap:12px;margin:18px 0}.step{display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:16px;background:#fff}.step:before{counter-increment:step;content:counter(step);width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;font-weight:1000}
+table{width:100%;border-collapse:collapse;margin:16px 0;border-radius:14px;overflow:hidden}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{background:#f0f7ff;color:var(--navy)}.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 10px;font-weight:900;font-size:14px}.red{background:#fee2e2;color:#991b1b}.yellow{background:#fef3c7;color:#92400e}.green{background:#dcfce7;color:#166534}.workflow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:18px 0}.flow-item{background:#f4f9ff;border:1px solid #cfe6ff;border-radius:999px;padding:10px 14px;font-weight:900;color:var(--navy)}.arrow{color:var(--blue);font-weight:1000}
+.quiz{background:#fbfdff;border:1px solid var(--line);border-radius:20px;padding:22px;margin:16px 0}.question{padding:16px 0;border-bottom:1px dashed #cbd5e1}.question:last-child{border-bottom:0}.question p{font-weight:1000;color:var(--navy);margin:0 0 10px}label.option{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin:8px 0;background:white;cursor:pointer}label.option:hover{border-color:var(--blue);background:#f5fbff}.scorebox{display:none;margin-top:16px;padding:16px;border-radius:16px;background:#eef7ff;border:1px solid #cfe6ff;font-weight:900;color:var(--navy)}.case-card{background:linear-gradient(135deg,#fff,#f4f9ff);border:1px solid var(--line);border-radius:22px;padding:22px}.certificate{display:none;margin-top:18px;border:10px solid #e7f0fb;border-radius:26px;padding:34px;text-align:center;background:linear-gradient(135deg,#fff,#f8fbff)}.certificate h2{font-size:42px}.footer{text-align:center;color:var(--muted);padding:34px 18px;border-top:1px solid var(--line);background:white}
+@media(max-width:900px){.hero-grid,.grid-2,.grid-3{grid-template-columns:1fr}.nav{display:none}.content,.section-head{padding:22px}}
+@media print{.topbar,.hero-actions,.btn,.nav{display:none!important}body{background:#fff}.hero{min-height:auto;color:#111;background:#fff;padding:30px 0}.hero-grid{grid-template-columns:1fr}section.lesson{box-shadow:none;page-break-inside:avoid}.certificate{display:block!important}}
+
+.real-image-box{
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#f4f9ff;
+  box-shadow:0 10px 28px rgba(11,31,51,.08);
+}
+.real-image-box img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+.real-image-caption{
+  padding:12px 14px;
+  color:var(--muted);
+  font-size:14px;
+  background:#fff;
+  border-top:1px solid var(--line);
+}
+.img-fallback{
+  min-height:230px;
+  border:2px dashed #b9d7f5;
+  border-radius:24px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:24px;
+  background:#f4f9ff;
+  color:var(--navy);
+}
+
+/* Lightbox styles */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(11, 31, 51, 0.96);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lightbox-overlay.show {
+  display: flex;
+  opacity: 1;
+}
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.6);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+.lightbox-overlay.show .lightbox-content {
+  transform: scale(1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #fff;
+  font-size: 55px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+  line-height: 1;
+}
+.lightbox-close:hover {
+  color: var(--cyan);
+  transform: scale(1.1);
+}
+.lightbox-caption {
+  margin: 20px auto 10px;
+  width: 80%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Locked states */
+.locked-section {
+  display: none !important;
+}
+.nav-disabled {
+  opacity: 0.3 !important;
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+
+/* Top bar score widget */
+.top-score-widget {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.topbar-badge {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.topbar-badge.pre-score {
+  background: #eef6ff;
+  color: var(--blue);
+  border: 1px solid #cfe6ff;
+}
+.topbar-badge.post-score {
+  background: #ecfdf5;
+  color: var(--green);
+  border: 1px solid #bbf7d0;
+}
+
+/* Study confirmation card */
+.study-confirm-card {
+  background: linear-gradient(135deg, #fff, #f4f9ff);
+  border: 2px solid var(--blue);
+  border-radius: var(--radius);
+  padding: 35px;
+  margin: 34px 0;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.study-confirm-card h3 {
+  margin-top: 0;
+  color: var(--navy);
+  font-size: 26px;
+}
+.study-confirm-card p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* Printable wrapper */
+@media print {
+  body > * {
+    display: none !important;
+  }
+  #printCertificateWrapper {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+  .certificate {
+    display: block !important;
+    border: 12px double var(--blue) !important;
+    background: #fff !important;
+    padding: 40px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+@keyframes modalFadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.name-modal-body {
+  animation: modalFadeIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#modalNameInput:focus {
+  border-color: var(--blue) !important;
+  box-shadow: 0 0 0 4px rgba(11, 116, 222, 0.15) !important;
+  transform: translateY(-1px);
+}
+#modalCancelNameBtn:hover {
+  background: #f4f9ff !important;
+  color: var(--blue) !important;
+  border-color: var(--blue) !important;
+}
+@keyframes modalEmojiBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.modal-emoji {
+  animation: modalEmojiBounce 2s infinite ease-in-out;
+  display: inline-block;
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner"><div class="brand"><span class="brand-badge">SS</span> Smart Survey eBook</div><div id="topScoreWidget" class="top-score-widget" style="display: none;"><span class="topbar-badge pre-score">Pre-Test: <span id="preScoreVal">-</span>/20</span><span class="topbar-badge post-score" style="display: none;" id="topPostScoreBadge">Post-Test: <span id="postScoreVal">-</span>/20</span></div><nav class="nav"><a href="#pretest" id="nav-pretest">ก่อนเรียน</a><a href="#lesson1" id="nav-lesson1">บท 1</a><a href="#lesson2" id="nav-lesson2">บท 2</a><a href="#lesson3" id="nav-lesson3">บท 3</a><a href="#lesson4" id="nav-lesson4">บท 4</a><a href="#lesson5" id="nav-lesson5">บท 5</a><a href="#lesson6" id="nav-lesson6">บท 6</a><a href="#case" id="nav-case">กรณีศึกษา</a><a href="#posttest" id="nav-posttest">หลังเรียน</a></nav></div><div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div></header>
+<section class="hero" id="cover"><div class="hero-grid"><div><div class="eyebrow">บทเรียนอิเล็กทรอนิกส์ | Unity for Smart TRD</div><h1>การสำรวจและตรวจสอบข้อมูลที่ราชพัสดุด้วย Smart Survey</h1><p class="subtitle">eBook พร้อมเรียนรู้ครบวงจร ตั้งแต่ติดตั้ง นำเข้า GPS สำรวจ ถ่ายภาพ ซิงค์ทีม ส่งออกรายงาน และประเมินผล</p><div class="hero-actions"><a class="btn btn-primary" href="#pretest" onclick="showAndResetPretest(event)">เริ่มทำแบบทดสอบเพื่อปลดล็อกบทเรียน</a><a class="btn btn-secondary" href="#lesson1" id="hero-enter-btn">เข้าสู่บทเรียน</a></div></div><div class="cover-card"><figure class="real-image-box">
+  <img src="img/cover-smart-survey.jpg" alt="เจ้าหน้าที่ใช้สมาร์ตโฟนสำรวจที่ราชพัสดุ พร้อมแผนที่ดาวเทียม หมุด GPS และเส้นขอบเขตแปลง" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/cover-smart-survey.jpg</strong><br><small>เจ้าหน้าที่ใช้สมาร์ตโฟนสำรวจที่ราชพัสดุ พร้อมแผนที่ดาวเทียม หมุด GPS และเส้นขอบเขตแปลง</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">เจ้าหน้าที่ใช้สมาร์ตโฟนสำรวจที่ราชพัสดุ พร้อมแผนที่ดาวเทียม หมุด GPS และเส้นขอบเขตแปลง</figcaption>
+</figure></div></div></section>
+<main>
+<section class="lesson" id="intro"><div class="section-head"><div class="section-kicker">ภาพรวมหลักสูตร</div><h2>เรียนรู้ Smart Survey แบบเข้าใจง่าย ใช้ได้จริง</h2></div><div class="content grid-2"><div><p>Smart Survey เป็นระบบสำรวจข้อมูลที่ราชพัสดุบนอุปกรณ์เคลื่อนที่ในรูปแบบ Progressive Web App ช่วยให้เจ้าหน้าที่สามารถค้นหาแปลง นำทาง บันทึกข้อมูล ถ่ายภาพหลักฐาน ทำงานร่วมกันเป็นทีม และส่งออกรายงานได้ในระบบเดียว</p><div class="success"><strong>ผลลัพธ์ที่คาดหวัง:</strong> ผู้เรียนสามารถใช้ระบบ Smart Survey ในการปฏิบัติงานภาคสนามได้ครบกระบวนการ ลดเอกสาร ลดการกรอกซ้ำ และเพิ่มความถูกต้องของข้อมูล</div></div><figure class="real-image-box">
+  <img src="img/overview-workflow.png" alt="Infographic Import → GPS → Navigate → Survey → Photo → Export" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/overview-workflow.png</strong><br><small>Infographic Import → GPS → Navigate → Survey → Photo → Export</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">Infographic Import → GPS → Navigate → Survey → Photo → Export</figcaption>
+</figure></div></section>
+<section class="lesson" id="objectives"><div class="section-head"><div class="section-kicker">Learning Objectives</div><h2>วัตถุประสงค์การเรียนรู้</h2></div><div class="content"><div class="grid-3"><div class="card"><h3>เตรียมระบบ</h3><p>ติดตั้ง PWA และเข้าสู่ระบบได้</p></div><div class="card"><h3>จัดการข้อมูล</h3><p>นำเข้า JSON/GeoJSON และตรวจสอบฟิลด์มาตรฐานได้</p></div><div class="card"><h3>ใช้ GPS</h3><p>ระบุตำแหน่ง ค้นหาแปลงใกล้ที่สุด และนำทางได้</p></div><div class="card"><h3>สำรวจจริง</h3><p>บันทึกข้อมูล วาด Polygon และถ่ายภาพหลักฐานได้</p></div><div class="card"><h3>ทำงานเป็นทีม</h3><p>เข้าใจ Team Collaboration และการซิงค์ข้อมูล</p></div><div class="card"><h3>ส่งออกรายงาน</h3><p>Export Excel, PDF, KML, GeoJSON ได้เหมาะสม</p></div></div></div></section>
+<section class="lesson" id="pretest"><div class="section-head"><div class="section-kicker">Pre-Test</div><h2>แบบทดสอบก่อนเรียน 20 ข้อ</h2></div><div class="content"><p>เลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว เพื่อประเมินความรู้พื้นฐานก่อนเริ่มบทเรียน</p><div class="quiz" data-quiz="pre">
+<div class="question" data-answer="b"><p>1. วัตถุประสงค์หลักของการสำรวจและตรวจสอบข้อมูลที่ราชพัสดุคือข้อใด</p>
+<label class="option"><input type="radio" name="pre1" value="a"> เพื่อจัดทำแผนที่ท่องเที่ยว</label>
+<label class="option"><input type="radio" name="pre1" value="b"> เพื่อตรวจสอบการใช้ประโยชน์ที่ดินของรัฐให้ถูกต้อง</label>
+<label class="option"><input type="radio" name="pre1" value="c"> เพื่อจัดเก็บข้อมูลประชากร</label>
+<label class="option"><input type="radio" name="pre1" value="d"> เพื่อสำรวจเส้นทางคมนาคม</label>
+</div>
+<div class="question" data-answer="b"><p>2. ปัญหาสำคัญของการสำรวจภาคสนามแบบเดิมคือข้อใด</p>
+<label class="option"><input type="radio" name="pre2" value="a"> ใช้ข้อมูลดิจิทัลมากเกินไป</label>
+<label class="option"><input type="radio" name="pre2" value="b"> ใช้อุปกรณ์หลายชนิดและมีการบันทึกข้อมูลซ้ำซ้อน</label>
+<label class="option"><input type="radio" name="pre2" value="c"> ไม่มีการใช้ GPS</label>
+<label class="option"><input type="radio" name="pre2" value="d"> ไม่มีแผนที่กระดาษ</label>
+</div>
+<div class="question" data-answer="c"><p>3. Smart Survey พัฒนาขึ้นในรูปแบบใด</p>
+<label class="option"><input type="radio" name="pre3" value="a"> Desktop Application</label>
+<label class="option"><input type="radio" name="pre3" value="b"> Mobile Game</label>
+<label class="option"><input type="radio" name="pre3" value="c"> Progressive Web Application (PWA)</label>
+<label class="option"><input type="radio" name="pre3" value="d"> CAD Software</label>
+</div>
+<div class="question" data-answer="c"><p>4. ข้อใดเป็นข้อดีของ PWA</p>
+<label class="option"><input type="radio" name="pre4" value="a"> ต้องติดตั้งจาก App Store เท่านั้น</label>
+<label class="option"><input type="radio" name="pre4" value="b"> ใช้งานได้เฉพาะคอมพิวเตอร์</label>
+<label class="option"><input type="radio" name="pre4" value="c"> ใช้งานผ่านเว็บเบราว์เซอร์ได้ทันที</label>
+<label class="option"><input type="radio" name="pre4" value="d"> ใช้งานได้เฉพาะ Android</label>
+</div>
+<div class="question" data-answer="b"><p>5. หลังจากเข้าสู่ระบบ Smart Survey แล้ว ระบบจะสร้างสิ่งใดให้ผู้ใช้งาน</p>
+<label class="option"><input type="radio" name="pre5" value="a"> เลขที่แปลง</label>
+<label class="option"><input type="radio" name="pre5" value="b"> User Code</label>
+<label class="option"><input type="radio" name="pre5" value="c"> หมายเลข GPS</label>
+<label class="option"><input type="radio" name="pre5" value="d"> Password ใหม่</label>
+</div>
+<div class="question" data-answer="c"><p>6. การเข้าร่วมทีมในระบบ Smart Survey ใช้อะไรเป็นตัวเชื่อม</p>
+<label class="option"><input type="radio" name="pre6" value="a"> เบอร์โทรศัพท์</label>
+<label class="option"><input type="radio" name="pre6" value="b"> Facebook</label>
+<label class="option"><input type="radio" name="pre6" value="c"> User Code</label>
+<label class="option"><input type="radio" name="pre6" value="d"> QR Payment</label>
+</div>
+<div class="question" data-answer="d"><p>7. ไฟล์ข้อมูลที่ Smart Survey รองรับสำหรับนำเข้าแผนที่คือข้อใด</p>
+<label class="option"><input type="radio" name="pre7" value="a"> MP3</label>
+<label class="option"><input type="radio" name="pre7" value="b"> DOCX</label>
+<label class="option"><input type="radio" name="pre7" value="c"> XLS เท่านั้น</label>
+<label class="option"><input type="radio" name="pre7" value="d"> JSON และ GeoJSON</label>
+</div>
+<div class="question" data-answer="b"><p>8. ฟิลด์ใดใช้เก็บหมายเลขทะเบียนที่ราชพัสดุ</p>
+<label class="option"><input type="radio" name="pre8" value="a"> NAME</label>
+<label class="option"><input type="radio" name="pre8" value="b"> REG_ID</label>
+<label class="option"><input type="radio" name="pre8" value="c"> REMARK</label>
+<label class="option"><input type="radio" name="pre8" value="d"> TUMB_NAME</label>
+</div>
+<div class="question" data-answer="a"><p>9. ฟิลด์ใดใช้สำหรับเก็บชื่ออำเภอ</p>
+<label class="option"><input type="radio" name="pre9" value="a"> AMPH_NAME</label>
+<label class="option"><input type="radio" name="pre9" value="b"> REG_ID</label>
+<label class="option"><input type="radio" name="pre9" value="c"> NAME</label>
+<label class="option"><input type="radio" name="pre9" value="d"> REMARK</label>
+</div>
+<div class="question" data-answer="c"><p>10. ข้อใดใช้สำหรับค้นหาข้อมูลแปลงในระบบ</p>
+<label class="option"><input type="radio" name="pre10" value="a"> REG_ID</label>
+<label class="option"><input type="radio" name="pre10" value="b"> REMARK</label>
+<label class="option"><input type="radio" name="pre10" value="c"> ทั้ง ก และ ข</label>
+<label class="option"><input type="radio" name="pre10" value="d"> ไม่มีข้อถูก</label>
+</div>
+<div class="question" data-answer="b"><p>11. จุดสีน้ำเงินบนแผนที่หมายถึงอะไร</p>
+<label class="option"><input type="radio" name="pre11" value="a"> แปลงที่รอสำรวจ</label>
+<label class="option"><input type="radio" name="pre11" value="b"> ตำแหน่งปัจจุบันของผู้ใช้งาน</label>
+<label class="option"><input type="radio" name="pre11" value="c"> แปลงที่สำรวจเสร็จ</label>
+<label class="option"><input type="radio" name="pre11" value="d"> จุดส่งออกข้อมูล</label>
+</div>
+<div class="question" data-answer="c"><p>12. ฟังก์ชัน GPS Follow Mode มีหน้าที่อะไร</p>
+<label class="option"><input type="radio" name="pre12" value="a"> ปิด GPS</label>
+<label class="option"><input type="radio" name="pre12" value="b"> ส่งออกข้อมูล</label>
+<label class="option"><input type="radio" name="pre12" value="c"> ให้แผนที่เลื่อนตามตำแหน่งผู้ใช้งาน</label>
+<label class="option"><input type="radio" name="pre12" value="d"> เปลี่ยนสีหมุด</label>
+</div>
+<div class="question" data-answer="b"><p>13. ปุ่มค้นหาแปลงใกล้ที่สุดทำหน้าที่ใด</p>
+<label class="option"><input type="radio" name="pre13" value="a"> ค้นหาแปลงที่อยู่ไกลที่สุด</label>
+<label class="option"><input type="radio" name="pre13" value="b"> ค้นหาแปลงที่รอการสำรวจและอยู่ใกล้ที่สุด</label>
+<label class="option"><input type="radio" name="pre13" value="c"> ลบแปลงทั้งหมด</label>
+<label class="option"><input type="radio" name="pre13" value="d"> ส่งออกข้อมูล</label>
+</div>
+<div class="question" data-answer="c"><p>14. หมุดสีแดงในระบบหมายถึงอะไร</p>
+<label class="option"><input type="radio" name="pre14" value="a"> สำรวจเสร็จแล้ว</label>
+<label class="option"><input type="radio" name="pre14" value="b"> อยู่ระหว่างตรวจสอบ</label>
+<label class="option"><input type="radio" name="pre14" value="c"> รอการสำรวจ</label>
+<label class="option"><input type="radio" name="pre14" value="d"> ข้อมูลสูญหาย</label>
+</div>
+<div class="question" data-answer="d"><p>15. หมุดสีเขียวในระบบหมายถึงอะไร</p>
+<label class="option"><input type="radio" name="pre15" value="a"> รอการสำรวจ</label>
+<label class="option"><input type="radio" name="pre15" value="b"> อยู่ระหว่างตรวจสอบ</label>
+<label class="option"><input type="radio" name="pre15" value="c"> กำลังซิงค์ข้อมูล</label>
+<label class="option"><input type="radio" name="pre15" value="d"> สำรวจเสร็จสิ้นแล้ว</label>
+</div>
+<div class="question" data-answer="a"><p>16. เครื่องมือ Polygon ใช้สำหรับอะไร</p>
+<label class="option"><input type="radio" name="pre16" value="a"> วาดขอบเขตแปลงที่ดิน</label>
+<label class="option"><input type="radio" name="pre16" value="b"> ถ่ายภาพ</label>
+<label class="option"><input type="radio" name="pre16" value="c"> นำทาง</label>
+<label class="option"><input type="radio" name="pre16" value="d"> ส่งออกข้อมูล</label>
+</div>
+<div class="question" data-answer="c"><p>17. ระบบสามารถคำนวณพื้นที่อัตโนมัติในหน่วยใด</p>
+<label class="option"><input type="radio" name="pre17" value="a"> ตารางเมตร</label>
+<label class="option"><input type="radio" name="pre17" value="b"> ไร่-งาน-ตารางวา</label>
+<label class="option"><input type="radio" name="pre17" value="c"> ทั้ง ก และ ข</label>
+<label class="option"><input type="radio" name="pre17" value="d"> ไม่มีข้อถูก</label>
+</div>
+<div class="question" data-answer="d"><p>18. ระบบรองรับการอัปโหลดภาพหลักฐานได้สูงสุดกี่ภาพต่อแปลง</p>
+<label class="option"><input type="radio" name="pre18" value="a"> 3 ภาพ</label>
+<label class="option"><input type="radio" name="pre18" value="b"> 5 ภาพ</label>
+<label class="option"><input type="radio" name="pre18" value="c"> 8 ภาพ</label>
+<label class="option"><input type="radio" name="pre18" value="d"> 10 ภาพ</label>
+</div>
+<div class="question" data-answer="c"><p>19. รูปแบบไฟล์ใดเหมาะสำหรับนำไปเปิดใน Google Earth</p>
+<label class="option"><input type="radio" name="pre19" value="a"> JPG</label>
+<label class="option"><input type="radio" name="pre19" value="b"> PDF</label>
+<label class="option"><input type="radio" name="pre19" value="c"> KML</label>
+<label class="option"><input type="radio" name="pre19" value="d"> MP4</label>
+</div>
+<div class="question" data-answer="c"><p>20. ข้อใดเป็นข้อควรระวังสำคัญของระบบ Smart Survey</p>
+<label class="option"><input type="radio" name="pre20" value="a"> ห้ามใช้ GPS</label>
+<label class="option"><input type="radio" name="pre20" value="b"> ห้ามเปิดแผนที่ดาวเทียม</label>
+<label class="option"><input type="radio" name="pre20" value="c"> ห้ามล้าง Cache ก่อนส่งออกข้อมูล</label>
+<label class="option"><input type="radio" name="pre20" value="d"> ห้ามเชื่อมต่ออินเทอร์เน็ต</label>
+</div>
+<button class="btn btn-primary" onclick="checkQuiz('pre')">ตรวจคำตอบ</button>
+<button class="btn btn-ghost" onclick="resetQuiz('pre')">ล้างคำตอบ</button>
+<div class="scorebox" id="score-pre"></div>
+</div></div></section>
+<section class="lesson" id="lesson1"><div class="section-head"><div class="section-kicker">บทที่ 1</div><h2>ความสำคัญของการสำรวจที่ราชพัสดุ</h2></div><div class="content grid-2"><div><p>การสำรวจและตรวจสอบข้อมูลที่ราชพัสดุเป็นภารกิจสำคัญที่ช่วยให้หน่วยงานทราบสภาพการใช้ประโยชน์ที่ดินของรัฐอย่างถูกต้องและเป็นปัจจุบัน ข้อมูลที่ได้ใช้ประกอบการบริหารจัดการทรัพย์สินของรัฐ การติดตามสัญญา การตรวจสอบข้อเท็จจริง และการจัดทำรายงานต่อผู้บริหาร</p><p>วิธีเดิมต้องใช้แผนที่กระดาษ เครื่อง GPS กล้อง และเอกสารจำนวนมาก เมื่อกลับสำนักงานยังต้องกรอกข้อมูลซ้ำ ทำให้เกิดความล่าช้าและผิดพลาดได้ง่าย</p><div class="note"><strong>แก่นของบทนี้:</strong> Smart Survey ทำให้เครื่องมือสำรวจทั้งหมดมาอยู่ในมือถือเครื่องเดียว</div></div><figure class="real-image-box">
+  <img src="img/old-vs-new-survey.png" alt="เปรียบเทียบงานสำรวจแบบเดิมกับ Smart Survey" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/old-vs-new-survey.png</strong><br><small>เปรียบเทียบงานสำรวจแบบเดิมกับ Smart Survey</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">เปรียบเทียบงานสำรวจแบบเดิมกับ Smart Survey</figcaption>
+</figure></div></section>
+<section class="lesson" id="lesson2"><div class="section-head"><div class="section-kicker">บทที่ 2</div><h2>การติดตั้งและเตรียมความพร้อม</h2></div>
+<div class="content">
+  <div class="grid-2" style="margin-bottom: 30px; border-bottom: 1px solid var(--line); padding-bottom: 30px;">
+    <div>
+      <p>Smart Survey เป็น Progressive Web App (PWA) จึงสามารถเปิดใช้งานผ่านเว็บเบราว์เซอร์บนสมาร์ตโฟน เช่น Google Chrome หรือ Safari และเพิ่มลงหน้าจอหลักเพื่อใช้งานเสมือนแอปพลิเคชันปกติได้ทันที</p>
+      <div class="steps">
+        <div class="step">เปิดเบราว์เซอร์บนมือถือแล้วไปที่ระบบสำรวจที่ราชพัสดุ <a href="https://sutisukkawaguji-spec.github.io/survey-pro/index.html" target="_blank" style="color: var(--blue); font-weight: bold; text-decoration: underline; white-space: nowrap;">(คลิกที่นี่เพื่อเปิดระบบ)</a></div>
+        <div class="step">กดปุ่ม “Add to Home Screen” หรือ “เพิ่มลงในหน้าจอหลัก” ของเบราว์เซอร์</div>
+        <div class="step">เปิดไอคอน Smart Survey ที่ปรากฏบนหน้าจอมือถือของคุณ</div>
+        <div class="step">ลงทะเบียนสมัครใช้งานหรือเข้าสู่ระบบเพื่อเริ่มต้นใช้งาน</div>
+        <div class="step">ตรวจสอบและอนุญาตสิทธิ์ Location, Internet, Battery และ GPS ก่อนลงพื้นที่สำรวจจริง</div>
+      </div>
+      <div class="success" style="margin-top: 15px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+        <div>💡 <strong>ระบบสำรวจจริง:</strong> เข้าใช้งานระบบสำรวจที่ราชพัสดุ (Smart Survey Pro)</div>
+        <a href="https://sutisukkawaguji-spec.github.io/survey-pro/index.html" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, var(--blue), var(--cyan)); color: white; text-decoration: none; font-size: 14px; padding: 8px 16px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(11,116,222,0.15); margin-top: 5px; font-weight: bold;">
+          🌐 คลิกที่นี่เพื่อเข้าใช้งานระบบสำรวจ
+        </a>
+      </div>
+    </div>
+    <figure class="real-image-box">
+      <img src="img/pwa-install-steps.jpg" alt="ขั้นตอนการติดตั้ง PWA บนโทรศัพท์มือถือ" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/pwa-install-steps.jpg</strong><br><small>ภาพขั้นตอนติดตั้ง PWA บนมือถือ</small></div></div>'">
+      <figcaption class="real-image-caption">รูปที่ 2.1: ขั้นตอนการติดตั้ง PWA บนโทรศัพท์มือถือ</figcaption>
+    </figure>
+  </div>
+
+  <div style="margin-bottom: 30px; border-bottom: 1px solid var(--line); padding-bottom: 30px;">
+    <h3>การสมัครใช้งานและการเข้าสู่ระบบ</h3>
+    <p>ในการใช้งานระบบ Smart Survey ผู้ปฏิบัติงานภาคสนามทุกคนจะต้องมีบัญชีส่วนตัวเพื่อบันทึกงานและทำงานร่วมกันเป็นทีม อย่างไรก็ตาม เพื่อความมั่นใจในความปลอดภัยและความเป็นส่วนตัวของข้อมูลผู้ใช้งาน <strong>ระบบจะไม่บังคับให้ใส่ข้อมูลส่วนตัวที่สำคัญ (เช่น เลขบัตรประจำตัวประชาชน, ที่อยู่จริง, หรือข้อมูลส่วนตัวที่มีความอ่อนไหวสูง) ในการสมัครสมาชิก</strong> โดยใช้เพียงข้อมูลพื้นฐานที่จำเป็นเท่านั้น</p>
+    
+    <div class="grid-2" style="margin-top: 20px;">
+      <div class="card">
+        <h4 style="margin-top: 0; color: var(--navy); display: flex; align-items: center; gap: 8px;">
+          <span style="background: var(--blue); color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px;">1</span>
+          การสมัครสมาชิก (Register)
+        </h4>
+        <p style="font-size: 14px; color: var(--muted); margin-bottom: 15px;">เมื่อเปิดหน้าสมัครสมาชิก ผู้เรียนกรอกเฉพาะ Username, อีเมล, ชื่อแสดงตน (Display Name) และรหัสผ่านเท่านั้น เพื่อความปลอดภัย ระบบไม่ได้บังคับให้บันทึกข้อมูลส่วนตัวเชิงลึกอื่น ๆ</p>
+        <figure class="real-image-box">
+          <img src="img/register-screen.png" alt="หน้าจอสมัครใช้งานระบบ Smart Survey ที่ไม่บังคับใส่ข้อมูลสำคัญ" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/register-screen.png</strong><br><small>หน้าจอสมัครใช้งานระบบ Smart Survey</small></div></div>'">
+          <figcaption class="real-image-caption">รูปที่ 2.2: หน้าจอสมัครใช้งาน (Register) เน้นข้อมูลพื้นฐานทั่วไป</figcaption>
+        </figure>
+      </div>
+
+      <div class="card">
+        <h4 style="margin-top: 0; color: var(--navy); display: flex; align-items: center; gap: 8px;">
+          <span style="background: var(--blue); color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px;">2</span>
+          การเข้าสู่ระบบ (Login)
+        </h4>
+        <p style="font-size: 14px; color: var(--muted); margin-bottom: 15px;">ภายหลังสมัครใช้งานแล้ว สามารถล็อกอินเข้าระบบด้วย Username หรืออีเมล และรหัสผ่านที่ตั้งไว้ เพื่อเข้าถึงแผนที่ ข้อมูลแปลงของทีม และเครื่องมือสำรวจภาคสนาม</p>
+        <figure class="real-image-box">
+          <img src="img/login-screen.png" alt="หน้าจอเข้าสู่ระบบ Smart Survey" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/login-screen.png</strong><br><small>หน้าจอเข้าสู่ระบบ Smart Survey</small></div></div>'">
+          <figcaption class="real-image-caption">รูปที่ 2.3: หน้าจอเข้าสู่ระบบ (Login)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3>โครงสร้างหน้าจอกลางและส่วนติดต่อผู้ใช้ (System Interface)</h3>
+    <p>หลังจากเข้าสู่ระบบสำเร็จแล้ว ระบบจะนำคุณเข้าสู่หน้าจอการทำงานหลัก (Dashboard / Map Interface) ซึ่งออกแบบมาให้สามารถเริ่มงานสำรวจที่ดินที่ราชพัสดุได้ทันทีบนแผนที่ดาวเทียมผสม</p>
+    
+    <div class="grid-2" style="margin-top: 20px; align-items: center;">
+      <div>
+        <p>องค์ประกอบที่สำคัญของหน้าต่างหลักประกอบไปด้วย:</p>
+        <ul style="padding-left: 20px; color: var(--muted); font-size: 15px; line-height: 1.8;">
+          <li><strong>แผนที่ฐาน (Map View):</strong> แสดงขอบเขตที่ดินราชพัสดุและหมุดสถานะแปลง รวมถึงพิกัดตำแหน่งของผู้ใช้งานแบบเรียลไทม์</li>
+          <li><strong>ตัวควบคุมแผนที่ (Map Tools):</strong> ปุ่มสลับรูปแบบแผนที่ (ดาวเทียม/ถนน) ปุ่มจัดศูนย์กลางตำแหน่งผู้ใช้ และปุ่มสืบค้นแปลงข้างเคียง</li>
+          <li><strong>เมนูหลักและสถานะ:</strong> เมนูการทำงานร่วมกันเป็นกลุ่มนำเข้า/ส่งออก ข้อมูล และปุ่มซิงค์งานแบบออฟไลน์</li>
+        </ul>
+        <div class="note">
+          💡 <strong>เคล็ดลับ:</strong> หน้าตาหลักของระบบได้รับการออกแบบมาเพื่อให้ตอบสนองต่อการสัมผัสและการทำงานในพื้นที่สัญญาณอินเทอร์เน็ตต่ำอย่างมีประสิทธิภาพสูงสุด
+        </div>
+      </div>
+      <figure class="real-image-box">
+        <img src="img/system-interface.png" alt="หน้าตาและส่วนติดต่อหลักของระบบ Smart Survey" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/system-interface.png</strong><br><small>หน้าตาและส่วนติดต่อหลักของระบบ Smart Survey</small></div></div>'">
+        <figcaption class="real-image-caption">รูปที่ 2.4: หน้าตาและส่วนติดต่อหลักของระบบ Smart Survey (System Interface)</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+</section>
+<section class="lesson" id="lesson3"><div class="section-head"><div class="section-kicker">บทที่ 3</div><h2>การสร้างทีมและนำเข้าข้อมูล GeoJSON</h2></div><div class="content"><div class="grid-2"><div><h3>Team Collaboration</h3><p>หัวหน้าทีมแจ้ง User Code ให้สมาชิกเข้าร่วมทีม เมื่ออยู่ใน Team ID เดียวกัน สมาชิกจะสามารถเห็นข้อมูลและสถานะงานร่วมกันได้</p><div class="workflow"><span class="flow-item">หัวหน้าทีม</span><span class="arrow">→</span><span class="flow-item">User Code</span><span class="arrow">→</span><span class="flow-item">สมาชิก</span><span class="arrow">→</span><span class="flow-item">Team ID เดียวกัน</span></div></div><figure class="real-image-box">
+  <img src="img/team-collaboration-flow.png" alt="Diagram การเชื่อมทีมด้วย User Code" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/team-collaboration-flow.png</strong><br><small>Diagram การเชื่อมทีมด้วย User Code</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">Diagram การเชื่อมทีมด้วย User Code</figcaption>
+</figure></div><h3>ฟิลด์มาตรฐานสำหรับข้อมูลแปลง</h3><table><thead><tr><th>ฟิลด์</th><th>ความหมาย</th><th>การใช้งาน</th></tr></thead><tbody><tr><td>REG_ID</td><td>หมายเลขทะเบียนที่ราชพัสดุ</td><td>ค้นหา/ระบุแปลง</td></tr><tr><td>NAME</td><td>ชื่อแปลงหรือชื่อผู้เช่า</td><td>แสดงรายละเอียด</td></tr><tr><td>REMARK</td><td>หมายเหตุ</td><td>ค้นหา/บันทึกสภาพพื้นที่</td></tr><tr><td>AMPH_NAME</td><td>ชื่ออำเภอ</td><td>กรองพื้นที่</td></tr><tr><td>TUMB_NAME</td><td>ชื่อตำบล</td><td>กรองพื้นที่</td></tr></tbody></table><figure class="real-image-box">
+  <img src="img/geojson-import-screen.png" alt="หน้าจอนำเข้า GeoJSON และตารางฟิลด์มาตรฐาน" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/geojson-import-screen.png</strong><br><small>หน้าจอนำเข้า GeoJSON และตารางฟิลด์มาตรฐาน</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">หน้าจอนำเข้า GeoJSON และตารางฟิลด์มาตรฐาน</figcaption>
+</figure></div></section>
+<section class="lesson" id="lesson4"><div class="section-head"><div class="section-kicker">บทที่ 4</div><h2>ระบบแผนที่ GPS และการนำทาง</h2></div><div class="content grid-2"><div><p>ระบบแผนที่ช่วยให้เจ้าหน้าที่ตรวจสอบตำแหน่งตนเอง เทียบกับแปลงเป้าหมาย และวางแผนการเดินทางได้สะดวกขึ้น</p><div class="steps"><div class="step">เลือกแผนที่ถนนหรือแผนที่ดาวเทียมผสม</div><div class="step">กด GPS เพื่อแสดงตำแหน่งปัจจุบันเป็นจุดสีน้ำเงิน</div><div class="step">เปิด GPS Follow Mode เพื่อให้แผนที่เลื่อนตามตัวผู้ใช้งาน</div><div class="step">กดหาแปลงใกล้ที่สุด เพื่อเลือกงานที่ยังไม่สำรวจ</div><div class="step">กดนำทาง เพื่อสร้างเส้นทางไปยังแปลงเป้าหมาย</div></div></div><figure class="real-image-box">
+  <img src="img/gps-navigation-map.jpg" alt="แผนที่ดาวเทียม มีจุด GPS หมุดแปลง และเส้นทางนำทาง" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/gps-navigation-map.jpg</strong><br><small>แผนที่ดาวเทียม มีจุด GPS หมุดแปลง และเส้นทางนำทาง</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">แผนที่ดาวเทียม มีจุด GPS หมุดแปลง และเส้นทางนำทาง</figcaption>
+</figure></div></section>
+<section class="lesson" id="lesson5"><div class="section-head"><div class="section-kicker">บทที่ 5</div><h2>การสำรวจภาคสนามและบันทึกหลักฐาน</h2></div><div class="content"><div class="grid-2"><div><h3>ขั้นตอนภาคสนาม</h3><div class="steps"><div class="step">ตรวจสอบตำแหน่ง GPS เทียบกับขอบเขตแปลง</div><div class="step">เปิดหน้ารายละเอียดแปลง</div><div class="step">ตรวจสอบ REG_ID, NAME และข้อมูลประกอบ</div><div class="step">บันทึกสภาพการใช้ประโยชน์ เช่น เกษตรกรรม อยู่อาศัย พาณิชยกรรม รกร้าง</div><div class="step">ถ่ายภาพหลักฐานและเปลี่ยนสถานะงาน</div></div></div><figure class="real-image-box">
+  <img src="img/field-survey-bottom-sheet.jpg" alt="หน้ารายละเอียดแปลงแบบ Bottom Sheet" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/field-survey-bottom-sheet.jpg</strong><br><small>หน้ารายละเอียดแปลงแบบ Bottom Sheet</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">หน้ารายละเอียดแปลงแบบ Bottom Sheet</figcaption>
+</figure></div><h3>การวาดขอบเขตแปลง</h3><p>เมื่อต้องปรับปรุงหรือสร้างขอบเขตแปลง ให้ใช้เครื่องมือ Polygon แตะจุดหักมุมตามแนวเขต ระบบจะคำนวณพื้นที่เป็นตารางเมตรและไร่-งาน-ตารางวาให้อัตโนมัติ</p><figure class="real-image-box">
+  <img src="img/polygon-drawing-area.png" alt="หน้าจอวาด Polygon และแสดงผลพื้นที่" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/polygon-drawing-area.png</strong><br><small>หน้าจอวาด Polygon และแสดงผลพื้นที่</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">หน้าจอวาด Polygon และแสดงผลพื้นที่</figcaption>
+</figure><h3>การถ่ายภาพหลักฐาน</h3><p>ภาพถ่ายควรชัด เห็นสภาพพื้นที่ แนวเขต อาคาร สิ่งปลูกสร้าง หรือการใช้ประโยชน์ที่เกี่ยวข้อง ระบบรองรับภาพหลักฐานได้สูงสุด 10 ภาพต่อแปลง</p><figure class="real-image-box">
+  <img src="img/photo-evidence-upload.jpg" alt="หน้าจอถ่ายภาพและ Gallery หลักฐาน" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/photo-evidence-upload.jpg</strong><br><small>หน้าจอถ่ายภาพและ Gallery หลักฐาน</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">หน้าจอถ่ายภาพและ Gallery หลักฐาน</figcaption>
+</figure></div></section>
+<section class="lesson" id="lesson6"><div class="section-head"><div class="section-kicker">บทที่ 6</div><h2>สถานะงาน การซิงค์ และการส่งออกข้อมูล</h2></div><div class="content"><h3>สถานะงาน</h3><div class="grid-3"><div class="card"><span class="pill red">🔴 Waiting</span><p>รอการสำรวจ</p></div><div class="card"><span class="pill yellow">🟡 Checking</span><p>อยู่ระหว่างตรวจสอบ</p></div><div class="card"><span class="pill green">🟢 Done</span><p>สำรวจเสร็จสิ้น</p></div></div><div class="grid-2"><div><h3>Offline Queue & Sync</h3><p>ระบบรองรับการทำงานในพื้นที่อินเทอร์เน็ตไม่เสถียร โดยเก็บข้อมูลไว้ในเครื่องชั่วคราว และซิงค์ขึ้นระบบกลางเมื่อกลับมาออนไลน์</p><div class="warning"><strong>ข้อควรระวัง:</strong> ห้ามล้าง Cache ก่อนซิงค์หรือส่งออกข้อมูล เพราะอาจทำให้ข้อมูลสูญหาย</div></div><figure class="real-image-box">
+  <img src="img/offline-sync-cloud.png" alt="Diagram Offline → Sync → Cloud → Team" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/offline-sync-cloud.png</strong><br><small>Diagram Offline → Sync → Cloud → Team</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">Diagram Offline → Sync → Cloud → Team</figcaption>
+</figure></div><h3>การส่งออกข้อมูล</h3><table><thead><tr><th>ไฟล์</th><th>ใช้ทำอะไร</th></tr></thead><tbody><tr><td>Excel</td><td>ตารางสรุปรายงาน</td></tr><tr><td>PDF</td><td>รายงาน A4 พร้อมภาพประกอบ</td></tr><tr><td>KML</td><td>เปิดใน Google Earth</td></tr><tr><td>GeoJSON</td><td>ใช้งานต่อใน GIS/Web Map</td></tr></tbody></table><figure class="real-image-box">
+  <img src="img/export-report-options.png" alt="เมนูส่งออก Excel, PDF, KML, GeoJSON" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/export-report-options.png</strong><br><small>เมนูส่งออก Excel, PDF, KML, GeoJSON</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">เมนูส่งออก Excel, PDF, KML, GeoJSON</figcaption>
+</figure></div></section>
+<section class="lesson" id="case"><div class="section-head"><div class="section-kicker">Case Study</div><h2>กรณีศึกษาจำลอง</h2></div><div class="content grid-2"><div class="case-card"><h3>สถานการณ์</h3><p>เจ้าหน้าที่พบแปลงที่มีหมุดสีแดง อยู่ใกล้ตำแหน่ง GPS ปัจจุบัน 180 เมตร เมื่อเดินทางถึง พบว่ามีการใช้ประโยชน์เป็นพื้นที่อยู่อาศัยและมีรั้วรอบบริเวณ</p><h3>แนวทางปฏิบัติ</h3><ol><li>กดนำทางไปยังแปลง</li><li>ตรวจสอบจุด GPS เทียบกับขอบเขตแปลง</li><li>เปิดรายละเอียดแปลง ตรวจสอบ REG_ID และ NAME</li><li>บันทึกหมายเหตุว่าใช้ประโยชน์เป็นที่อยู่อาศัย</li><li>ถ่ายภาพรั้วและสภาพพื้นที่</li><li>เปลี่ยนสถานะเป็น Done เมื่อข้อมูลครบ</li></ol></div><figure class="real-image-box">
+  <img src="img/case-study-parcel.png" alt="แปลงตัวอย่างพร้อมสถานะ ข้อมูล และภาพหลักฐาน" onerror="this.parentElement.outerHTML='<div class=&quot;img-fallback&quot;><div><strong>ยังไม่พบภาพ: img/case-study-parcel.png</strong><br><small>แปลงตัวอย่างพร้อมสถานะ ข้อมูล และภาพหลักฐาน</small><br><small>ตรวจสอบว่าไฟล์อยู่ในโฟลเดอร์ img และชื่อไฟล์ตรงทุกตัวอักษร</small></div></div>'">
+  <figcaption class="real-image-caption">แปลงตัวอย่างพร้อมสถานะ ข้อมูล และภาพหลักฐาน</figcaption>
+</figure></div></section>
+<div id="studyConfirmCard" class="study-confirm-card" style="display: none;">
+  <div style="font-size: 44px; margin-bottom: 15px;">🎓</div>
+  <h3>คุณได้ศึกษาบทเรียนครบถ้วนทุกส่วนแล้ว</h3>
+  <p>ขั้นตอนสุดท้ายคือการทำแบบทดสอบหลังเรียน (Post-Test) เพื่อประเมินความรู้และรับใบรับรอง</p>
+  <button class="btn btn-primary" onclick="unlockPosttest()">เริ่มทำแบบทดสอบหลังเรียน (Post-Test) 🚀</button>
+</div>
+<section class="lesson" id="posttest"><div class="section-head"><div class="section-kicker">Post-Test</div><h2>แบบทดสอบหลังเรียน 20 ข้อ</h2></div><div class="content"><p>เลือกคำตอบที่ถูกต้องที่สุด เกณฑ์ผ่านแนะนำคือ 80%</p><div class="quiz" data-quiz="post">
+<div class="question" data-answer="b"><p>1. เจ้าหน้าที่นำเข้าข้อมูลแล้วไม่พบชื่ออำเภอในตัวกรอง ควรตรวจสอบฟิลด์ใดเป็นลำดับแรก</p>
+<label class="option"><input type="radio" name="post1" value="a"> REG_ID</label>
+<label class="option"><input type="radio" name="post1" value="b"> AMPH_NAME</label>
+<label class="option"><input type="radio" name="post1" value="c"> PHOTO</label>
+<label class="option"><input type="radio" name="post1" value="d"> USER_CODE</label>
+</div>
+<div class="question" data-answer="a"><p>2. หากต้องการให้สมาชิกทีมเห็นข้อมูลชุดเดียวกัน ควรดำเนินการอย่างไร</p>
+<label class="option"><input type="radio" name="post2" value="a"> ให้ทุกคนใช้ User Code ของหัวหน้าทีมหรือเข้าร่วม Team ID เดียวกัน</label>
+<label class="option"><input type="radio" name="post2" value="b"> ให้ทุกคนใช้มือถือรุ่นเดียวกัน</label>
+<label class="option"><input type="radio" name="post2" value="c"> ให้ทุกคนปิด GPS</label>
+<label class="option"><input type="radio" name="post2" value="d"> ให้ทุกคนนำเข้าไฟล์คนละชุด</label>
+</div>
+<div class="question" data-answer="b"><p>3. เมื่อเจ้าหน้าที่อยู่หน้างาน แต่แผนที่ไม่เลื่อนตามตำแหน่ง ควรใช้ฟังก์ชันใด</p>
+<label class="option"><input type="radio" name="post3" value="a"> Export Excel</label>
+<label class="option"><input type="radio" name="post3" value="b"> GPS Follow Mode</label>
+<label class="option"><input type="radio" name="post3" value="c"> Clear Cache</label>
+<label class="option"><input type="radio" name="post3" value="d"> Delete Data</label>
+</div>
+<div class="question" data-answer="a"><p>4. กรณีต้องการค้นหาแปลงจากเลขทะเบียน ควรใช้ข้อมูลจากฟิลด์ใด</p>
+<label class="option"><input type="radio" name="post4" value="a"> REG_ID</label>
+<label class="option"><input type="radio" name="post4" value="b"> TUMB_NAME</label>
+<label class="option"><input type="radio" name="post4" value="c"> ICON</label>
+<label class="option"><input type="radio" name="post4" value="d"> COLOR</label>
+</div>
+<div class="question" data-answer="b"><p>5. หากพบแปลงที่กำลังตรวจสอบแต่ยังไม่เสร็จสมบูรณ์ ควรกำหนดสถานะใด</p>
+<label class="option"><input type="radio" name="post5" value="a"> Waiting</label>
+<label class="option"><input type="radio" name="post5" value="b"> Checking</label>
+<label class="option"><input type="radio" name="post5" value="c"> Done</label>
+<label class="option"><input type="radio" name="post5" value="d"> Deleted</label>
+</div>
+<div class="question" data-answer="c"><p>6. ข้อมูลที่สำรวจเสร็จแล้วควรเปลี่ยนสถานะเป็นสีใด</p>
+<label class="option"><input type="radio" name="post6" value="a"> แดง</label>
+<label class="option"><input type="radio" name="post6" value="b"> เหลือง</label>
+<label class="option"><input type="radio" name="post6" value="c"> เขียว</label>
+<label class="option"><input type="radio" name="post6" value="d"> ดำ</label>
+</div>
+<div class="question" data-answer="a"><p>7. ถ้าจะนำข้อมูลไปใช้ต่อใน QGIS หรือ Web Map ควรส่งออกไฟล์แบบใด</p>
+<label class="option"><input type="radio" name="post7" value="a"> GeoJSON</label>
+<label class="option"><input type="radio" name="post7" value="b"> MP3</label>
+<label class="option"><input type="radio" name="post7" value="c"> DOCX</label>
+<label class="option"><input type="radio" name="post7" value="d"> PNG เท่านั้น</label>
+</div>
+<div class="question" data-answer="a"><p>8. กรณีต้องการรายงานตารางสรุปส่งหัวหน้างาน ควร Export เป็นไฟล์ใด</p>
+<label class="option"><input type="radio" name="post8" value="a"> Excel</label>
+<label class="option"><input type="radio" name="post8" value="b"> MP4</label>
+<label class="option"><input type="radio" name="post8" value="c"> ZIP เท่านั้น</label>
+<label class="option"><input type="radio" name="post8" value="d"> HTML เท่านั้น</label>
+</div>
+<div class="question" data-answer="a"><p>9. การถ่ายภาพหลักฐานที่เหมาะสมควรเป็นอย่างไร</p>
+<label class="option"><input type="radio" name="post9" value="a"> ภาพชัด เห็นสภาพพื้นที่และหลักฐานเกี่ยวข้อง</label>
+<label class="option"><input type="radio" name="post9" value="b"> ภาพเบลอเพื่อประหยัดเวลา</label>
+<label class="option"><input type="radio" name="post9" value="c"> ภาพอะไรก็ได้</label>
+<label class="option"><input type="radio" name="post9" value="d"> ไม่จำเป็นต้องถ่าย</label>
+</div>
+<div class="question" data-answer="a"><p>10. ก่อนบันทึกสภาพการใช้ประโยชน์ ควรตรวจสอบอะไรบนแผนที่</p>
+<label class="option"><input type="radio" name="post10" value="a"> ตำแหน่ง GPS เทียบกับขอบเขตแปลง</label>
+<label class="option"><input type="radio" name="post10" value="b"> ระดับเสียงมือถือ</label>
+<label class="option"><input type="radio" name="post10" value="c"> ภาษาแป้นพิมพ์</label>
+<label class="option"><input type="radio" name="post10" value="d"> ชื่อ Wi-Fi</label>
+</div>
+<div class="question" data-answer="a"><p>11. ถ้าอินเทอร์เน็ตไม่เสถียร ระบบ Offline Queue มีประโยชน์อย่างไร</p>
+<label class="option"><input type="radio" name="post11" value="a"> ช่วยเก็บข้อมูลไว้ชั่วคราวเพื่อรอซิงค์</label>
+<label class="option"><input type="radio" name="post11" value="b"> ลบข้อมูลทั้งหมดทันที</label>
+<label class="option"><input type="radio" name="post11" value="c"> ปิดแผนที่</label>
+<label class="option"><input type="radio" name="post11" value="d"> ทำให้ GPS หยุดทำงาน</label>
+</div>
+<div class="question" data-answer="a"><p>12. ข้อใดไม่ควรทำก่อนส่งออกหรือซิงค์ข้อมูลสำรวจ</p>
+<label class="option"><input type="radio" name="post12" value="a"> ล้าง Cache ของ Browser</label>
+<label class="option"><input type="radio" name="post12" value="b"> ตรวจสอบข้อมูล</label>
+<label class="option"><input type="radio" name="post12" value="c"> สำรองข้อมูล</label>
+<label class="option"><input type="radio" name="post12" value="d"> ตรวจสอบรูปภาพ</label>
+</div>
+<div class="question" data-answer="a"><p>13. เครื่องมือ Polygon ใช้เมื่อใด</p>
+<label class="option"><input type="radio" name="post13" value="a"> เมื่อต้องวาดหรือปรับปรุงขอบเขตแปลง</label>
+<label class="option"><input type="radio" name="post13" value="b"> เมื่อต้องออกจากระบบ</label>
+<label class="option"><input type="radio" name="post13" value="c"> เมื่อต้องปิดหน้าจอ</label>
+<label class="option"><input type="radio" name="post13" value="d"> เมื่อต้องเปลี่ยนรหัสผ่าน</label>
+</div>
+<div class="question" data-answer="a"><p>14. การค้นหาแปลงใกล้ที่สุดเหมาะกับสถานการณ์ใด</p>
+<label class="option"><input type="radio" name="post14" value="a"> ต้องการวางแผนลงพื้นที่ต่อเนื่องโดยลดการเดินทางย้อนกลับ</label>
+<label class="option"><input type="radio" name="post14" value="b"> ต้องการลบข้อมูลทั้งหมด</label>
+<label class="option"><input type="radio" name="post14" value="c"> ต้องการเปลี่ยนธีมสี</label>
+<label class="option"><input type="radio" name="post14" value="d"> ต้องการติดตั้งแอปใหม่</label>
+</div>
+<div class="question" data-answer="a"><p>15. การใช้แผนที่ดาวเทียมผสมช่วยงานสำรวจอย่างไร</p>
+<label class="option"><input type="radio" name="post15" value="a"> ช่วยเปรียบเทียบสภาพพื้นที่จริง แนวถนน สิ่งปลูกสร้าง และขอบเขตแปลง</label>
+<label class="option"><input type="radio" name="post15" value="b"> ทำให้โทรศัพท์ชาร์จเร็วขึ้น</label>
+<label class="option"><input type="radio" name="post15" value="c"> ทำให้รูปภาพเล็กลง</label>
+<label class="option"><input type="radio" name="post15" value="d"> ใช้แทนเอกสารการเงิน</label>
+</div>
+<div class="question" data-answer="a"><p>16. เมื่อข้อมูลถูกเปลี่ยนเป็น Done ระบบควรใช้ข้อมูลนั้นเพื่ออะไร</p>
+<label class="option"><input type="radio" name="post16" value="a"> สรุปผลงานและส่งออกรายงาน</label>
+<label class="option"><input type="radio" name="post16" value="b"> กลับไปเป็น Waiting เสมอ</label>
+<label class="option"><input type="radio" name="post16" value="c"> ลบออกจากทีม</label>
+<label class="option"><input type="radio" name="post16" value="d"> ซ่อนจากหัวหน้างาน</label>
+</div>
+<div class="question" data-answer="a"><p>17. หากต้องการเปิดข้อมูลเชิงพื้นที่ใน Google Earth ควรใช้ไฟล์ใด</p>
+<label class="option"><input type="radio" name="post17" value="a"> KML</label>
+<label class="option"><input type="radio" name="post17" value="b"> DOCX</label>
+<label class="option"><input type="radio" name="post17" value="c"> MP3</label>
+<label class="option"><input type="radio" name="post17" value="d"> PPTX</label>
+</div>
+<div class="question" data-answer="a"><p>18. การทำงานแบบ Team Collaboration ช่วยลดปัญหาใด</p>
+<label class="option"><input type="radio" name="post18" value="a"> การทำงานซ้ำซ้อนและการไม่เห็นสถานะงานร่วมกัน</label>
+<label class="option"><input type="radio" name="post18" value="b"> การเปิดกล้อง</label>
+<label class="option"><input type="radio" name="post18" value="c"> การเปลี่ยนฟอนต์</label>
+<label class="option"><input type="radio" name="post18" value="d"> การชาร์จแบตเตอรี่</label>
+</div>
+<div class="question" data-answer="a"><p>19. ข้อใดเป็นลำดับการทำงานภาคสนามที่เหมาะสม</p>
+<label class="option"><input type="radio" name="post19" value="a"> นำเข้า → GPS → นำทาง → สำรวจ → ถ่ายภาพ → ส่งออก</label>
+<label class="option"><input type="radio" name="post19" value="b"> ส่งออก → ล้าง Cache → นำเข้า</label>
+<label class="option"><input type="radio" name="post19" value="c"> ถ่ายภาพ → ลบข้อมูล → ปิด GPS</label>
+<label class="option"><input type="radio" name="post19" value="d"> เปิดเพลง → นำเข้า → ปิดแผนที่</label>
+</div>
+<div class="question" data-answer="a"><p>20. หากผู้เรียนทำ Post-Test ได้ 80% ขึ้นไป ควรได้รับผลลัพธ์ใด</p>
+<label class="option"><input type="radio" name="post20" value="a"> ผ่านเกณฑ์และสามารถพิมพ์ใบรับรองได้</label>
+<label class="option"><input type="radio" name="post20" value="b"> ต้องเริ่มเรียนใหม่เสมอ</label>
+<label class="option"><input type="radio" name="post20" value="c"> ระบบลบคะแนน</label>
+<label class="option"><input type="radio" name="post20" value="d"> ระบบปิดแอป</label>
+</div>
+<button class="btn btn-primary" onclick="checkQuiz('post')">ตรวจคำตอบ</button>
+<button class="btn btn-ghost" onclick="resetQuiz('post')">ล้างคำตอบ</button>
+<div class="scorebox" id="score-post"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<div id="printCertificateWrapper" style="display: none; max-width: 1200px; margin: auto; padding: 0 18px 80px;">
+  <div class="certificate" id="certificate">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <span style="font-size: 55px; color: var(--orange);">🏆</span>
+    </div>
+    <h2 style="font-size: 34px; margin-top: 0; color: var(--navy); font-weight: bold;">ใบประกาศนียบัตร</h2>
+    <p style="font-size: 18px; margin: 10px 0;">ขอรับรองว่าคุณ</p>
+    
+    <h2 id="certStudentName" style="font-size: 32px; margin: 10px 0; color: var(--blue); border-bottom: 2px dashed var(--line); display: inline-block; min-width: 320px; padding-bottom: 5px; font-weight: bold;">[กรอกชื่อของคุณด้านล่าง]</h2>
+    
+    <p style="font-size: 16px; margin: 10px 0; color: var(--muted);">ผ่านเกณฑ์การเรียนรู้หลักสูตรอิเล็กทรอนิกส์</p>
+    <h3 style="font-size: 24px; color: var(--navy); margin: 10px 0 24px; font-weight: 900;">การสำรวจและตรวจสอบข้อมูลที่ราชพัสดุด้วย Smart Survey</h3>
+    
+    <div style="margin: 24px auto; max-width: 480px; background: #f4f9ff; border: 1px solid var(--line); border-radius: 16px; padding: 22px; text-align: left; box-shadow: 0 4px 14px rgba(11,31,51,0.03);">
+      <h4 style="margin: 0 0 14px; color: var(--navy); font-size: 16px; border-bottom: 1px solid var(--line); padding-bottom: 8px; font-weight: 900;">📊 ผลสรุปผลการประเมินความรู้ (คะแนนสอบก่อน-หลังเรียน)</h4>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+        <span>คะแนนก่อนเรียน (Pre-Test):</span>
+        <span style="font-weight: bold; color: var(--muted);"><span id="certPreScore">0</span> / 20 ข้อ</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px;">
+        <span>คะแนนหลังเรียน (Post-Test):</span>
+        <span style="font-weight: bold; color: var(--green);"><span id="certPostScore">0</span> / 20 ข้อ</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-top: 1px dashed var(--line); padding-top: 10px; font-size: 14px; font-weight: bold;">
+        <span>พัฒนาการด้านความรู้ (Improvement):</span>
+        <span style="color: var(--blue);" id="certImprovement">+0</span>
+      </div>
+    </div>
+
+    <div class="no-print" style="margin-top: 24px;">
+      <p style="font-size: 14px; margin-bottom: 10px; color: var(--muted);">กรุณากรอกชื่อ-นามสกุลของคุณ เพื่อให้ปรากฏบนใบประกาศนียบัตรก่อนพิมพ์/บันทึก:</p>
+      <input type="text" id="studentNameInput" placeholder="พิมพ์ชื่อ-นามสกุลของคุณที่นี่" style="padding: 12px 20px; border: 2px solid var(--blue); border-radius: 12px; width: 85%; max-width: 380px; font-size: 16px; font-family: inherit; text-align: center; outline: none; transition: 0.2s; box-shadow: 0 2px 8px rgba(11,116,222,0.05);">
+    </div>
+    
+    <div style="margin-top: 32px; display: flex; gap: 12px; justify-content: center;" class="no-print">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ พิมพ์หรือบันทึกเป็น PDF</button>
+      <button class="btn btn-ghost" onclick="restartEntireCourse()">🔄 รีเซ็ตและเริ่มเรียนใหม่</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer"><strong>Smart Survey eBook</strong><br>พร้อมใช้บน GitHub Pages | Unity for Smart TRD</footer>
+
+<!-- Image Lightbox Modal -->
+<div id="imageLightbox" class="lightbox-overlay">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightboxImg">
+  <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>
+
+<!-- Name Input Modal -->
+<div id="nameInputModal" class="lightbox-overlay">
+  <div class="name-modal-body" style="background: rgba(255, 255, 255, 0.98); padding: 40px; border-radius: var(--radius); max-width: 500px; width: 90%; text-align: center; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.6); position: relative; border: 1px solid rgba(255, 255, 255, 0.35); backdrop-filter: blur(20px); overflow: hidden;">
+    <!-- Premium Accent line at top -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--blue), var(--cyan));"></div>
+    
+    <div style="font-size: 55px; margin-bottom: 20px;" class="modal-emoji">🏆</div>
+    <h3 style="margin-top: 0; color: var(--navy); font-size: 26px; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 8px;">ยินดีด้วย! คุณผ่านเกณฑ์แล้ว</h3>
+    <p style="color: var(--muted); margin-bottom: 30px; font-size: 15.5px; line-height: 1.6;">กรุณากรอกชื่อ-นามสกุลจริงของคุณ เพื่อนำไปใช้แสดงผลบนใบประกาศนียบัตร</p>
+    
+    <div style="position: relative; margin-bottom: 28px;">
+      <input type="text" id="modalNameInput" placeholder="พิมพ์ชื่อ-นามสกุลของคุณที่นี่" style="padding: 14px 24px; border: 2px solid var(--line); border-radius: 16px; width: 100%; font-size: 16px; font-family: inherit; text-align: center; outline: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 10px rgba(11,31,51,0.02); font-weight: bold; color: var(--navy);">
+    </div>
+    
+    <div style="display: flex; gap: 14px; justify-content: center;">
+      <button class="btn btn-primary" id="modalSubmitNameBtn" style="min-width: 140px; background: linear-gradient(135deg, var(--blue), var(--cyan)); color: white; border-radius: 999px; box-shadow: 0 10px 20px rgba(11,116,222,0.25);">ยืนยันและเปิด PDF</button>
+      <button class="btn btn-secondary" id="modalCancelNameBtn" style="color: var(--muted); border: 1px solid var(--line); min-width: 120px; background: transparent; border-radius: 999px; transition: all 0.2s;">ข้ามขั้นตอนนี้</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showAndResetPretest(e) {
+  if (e) e.preventDefault();
+  
+  // Show pretest section
+  const pretestSection = document.getElementById('pretest');
+  if (pretestSection) {
+    pretestSection.style.display = 'block';
+  }
+  
+  // Show pretest nav link
+  const navPretest = document.getElementById('nav-pretest');
+  if (navPretest) {
+    navPretest.style.display = '';
+  }
+  
+  // Reset pre-test quiz inputs and states
+  const preQuiz = document.querySelector('[data-quiz="pre"]');
+  if (preQuiz) {
+    preQuiz.querySelectorAll('input[type="radio"]').forEach(i => {
+      i.checked = false;
+      i.disabled = false;
+    });
+    preQuiz.querySelectorAll('.option').forEach(o => {
+      o.style.borderColor = '#d9e2ec';
+      o.style.background = '#fff';
+    });
+    const preScoreBox = document.getElementById('score-pre');
+    if (preScoreBox) {
+      preScoreBox.style.display = 'none';
+    }
+    shuffleQuizOptions('pre');
+  }
+  
+  // Reset localStorage states related to lessons unlocking so they can retake properly
+  localStorage.removeItem('smartSurvey_lessonsUnlocked');
+  localStorage.removeItem('smartSurvey_preScore');
+  updateAppFlow();
+
+  // Scroll to pretest
+  if (pretestSection) {
+    pretestSection.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function shuffleQuizOptions(quizName) {
+  const quiz = document.querySelector(`[data-quiz="${quizName}"]`);
+  if (!quiz) return;
+  quiz.querySelectorAll('.question').forEach(q => {
+    const options = Array.from(q.querySelectorAll('.option'));
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [options[i], options[j]] = [options[j], options[i]];
+    }
+    options.forEach(opt => q.appendChild(opt));
+  });
+}
+
+function checkQuiz(name){
+  const quiz=document.querySelector(`[data-quiz="${name}"]`);
+  const questions=quiz.querySelectorAll('.question');
+  let score=0;
+  
+  // Calculate score first
+  questions.forEach(q=>{
+    const ans=q.dataset.answer;
+    const checked=q.querySelector('input[type="radio"]:checked');
+    if(checked && checked.value===ans){
+      score++;
+    }
+  });
+  
+  const percent=Math.round(score/questions.length*100);
+  const box=document.getElementById(`score-${name}`);
+  box.style.display='block';
+  
+  // Determine if we should show the correct answers
+  const shouldShowColors = (name === 'post');
+  const shouldShowKey = (name === 'post' && percent >= 80);
+  
+  // Apply styling to answers
+  questions.forEach(q=>{
+    const ans=q.dataset.answer;
+    const checked=q.querySelector('input[type="radio"]:checked');
+    
+    q.querySelectorAll('.option').forEach(o=>{
+      o.style.borderColor='#d9e2ec';
+      o.style.background='#fff';
+    });
+    
+    if(shouldShowColors){
+      if(checked){
+        if(checked.value===ans){
+          checked.closest('.option').style.borderColor='#16a34a';
+          checked.closest('.option').style.background='#ecfdf5';
+        } else {
+          checked.closest('.option').style.borderColor='#ef4444';
+          checked.closest('.option').style.background='#fee2e2';
+          
+          if(shouldShowKey){
+            const correct=q.querySelector(`input[value="${ans}"]`);
+            if(correct){
+              correct.closest('.option').style.borderColor='#16a34a';
+              correct.closest('.option').style.background='#ecfdf5';
+            }
+          }
+        }
+      } else {
+        if(shouldShowKey){
+          const correct=q.querySelector(`input[value="${ans}"]`);
+          if(correct){
+            correct.closest('.option').style.borderColor='#16a34a';
+            correct.closest('.option').style.background='#ecfdf5';
+          }
+        }
+      }
+    }
+  });
+
+  if (name === 'pre') {
+    box.innerHTML=`คะแนน Pre-Test ของคุณ: ${score}/${questions.length} (${percent}%) 🔓 ปลดล็อกบทเรียนเรียบร้อยแล้ว!`;
+    localStorage.setItem('smartSurvey_lessonsUnlocked', 'true');
+    localStorage.setItem('smartSurvey_preScore', score);
+    updateAppFlow();
+    quiz.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = true);
+    setTimeout(() => {
+      const introSection = document.getElementById('intro');
+      if (introSection) introSection.scrollIntoView({behavior:'smooth'});
+    }, 1500);
+  } else if (name === 'post') {
+    if (percent >= 80) {
+      box.innerHTML=`คะแนนของคุณ: ${score}/${questions.length} (${percent}%) 🎉 ผ่านเกณฑ์เรียบร้อย!`;
+      localStorage.setItem('smartSurvey_posttestPassed', 'true');
+      localStorage.setItem('smartSurvey_postScore', score);
+      updateAppFlow();
+      
+      // Prompt for name before print
+      setTimeout(() => {
+        const nameModal = document.getElementById('nameInputModal');
+        const modalInput = document.getElementById('modalNameInput');
+        const submitBtn = document.getElementById('modalSubmitNameBtn');
+        const cancelBtn = document.getElementById('modalCancelNameBtn');
+        
+        const savedName = localStorage.getItem('smartSurvey_studentName') || '';
+        modalInput.value = savedName;
+        
+        nameModal.classList.add('show');
+        modalInput.focus();
+        
+        function handleNameSubmit(enteredName) {
+          const finalName = enteredName.trim() || '[กรอกชื่อของคุณด้านล่าง]';
+          localStorage.setItem('smartSurvey_studentName', enteredName.trim());
+          
+          const certName = document.getElementById('certStudentName');
+          const nameInputEl = document.getElementById('studentNameInput');
+          if (certName) certName.innerText = finalName;
+          if (nameInputEl) nameInputEl.value = enteredName.trim();
+          
+          nameModal.classList.remove('show');
+          
+          setTimeout(() => {
+            const wrapper = document.getElementById('printCertificateWrapper');
+            if (wrapper) {
+              wrapper.style.display = 'block';
+              wrapper.scrollIntoView({behavior:'smooth'});
+            }
+            setTimeout(() => {
+              window.print();
+            }, 1000);
+          }, 500);
+        }
+        
+        submitBtn.onclick = () => {
+          handleNameSubmit(modalInput.value);
+        };
+        
+        cancelBtn.onclick = () => {
+          handleNameSubmit(savedName);
+        };
+        
+        modalInput.onkeydown = (e) => {
+          if (e.key === 'Enter') {
+            handleNameSubmit(modalInput.value);
+          }
+        };
+      }, 800);
+      
+    } else {
+      box.innerHTML=`คะแนนของคุณ: ${score}/${questions.length} (${percent}%) ⚠️ ยังไม่ผ่านเกณฑ์ 80% (ต้องการ 16/20 คะแนนขึ้นไป) กรุณาทบทวนบทเรียนและทำแบบทดสอบใหม่อีกครั้ง`;
+      localStorage.setItem('smartSurvey_posttestPassed', 'false');
+    }
+  }
+}
+
+function resetQuiz(name){
+  const quiz=document.querySelector(`[data-quiz="${name}"]`);
+  quiz.querySelectorAll('input[type="radio"]').forEach(i=>{
+    i.checked=false;
+    i.disabled=false;
+  });
+  quiz.querySelectorAll('.option').forEach(o=>{
+    o.style.borderColor='#d9e2ec';
+    o.style.background='#fff';
+  });
+  document.getElementById(`score-${name}`).style.display='none';
+  if(name==='pre') {
+    localStorage.removeItem('smartSurvey_lessonsUnlocked');
+    localStorage.removeItem('smartSurvey_preScore');
+    updateAppFlow();
+  } else if(name==='post') {
+    document.getElementById('printCertificateWrapper').style.display='none';
+    localStorage.removeItem('smartSurvey_posttestPassed');
+    localStorage.removeItem('smartSurvey_postScore');
+    updateAppFlow();
+  }
+  // Reshuffle options on reset so they get a fresh ordering
+  shuffleQuizOptions(name);
+}
+
+function initLightbox() {
+  const lightbox = document.getElementById('imageLightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  document.querySelectorAll('.real-image-box img, .cover-card img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = img.alt || img.nextElementSibling?.textContent || '';
+      lightbox.classList.add('show');
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('show');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg && e.target !== lightboxCaption) {
+      lightbox.classList.remove('show');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('show');
+    }
+  });
+}
+
+function unlockPosttest() {
+  localStorage.setItem('smartSurvey_posttestUnlocked', 'true');
+  updateAppFlow();
+  setTimeout(() => {
+    const posttestSection = document.getElementById('posttest');
+    if (posttestSection) posttestSection.scrollIntoView({ behavior: 'smooth' });
+  }, 100);
+}
+
+function restartEntireCourse() {
+  if (confirm('คุณต้องการล้างคะแนนและประวัติการเรียนทั้งหมดเพื่อเริ่มต้นใหม่ใช่หรือไม่?')) {
+    localStorage.removeItem('smartSurvey_lessonsUnlocked');
+    localStorage.removeItem('smartSurvey_preScore');
+    localStorage.removeItem('smartSurvey_posttestUnlocked');
+    localStorage.removeItem('smartSurvey_posttestPassed');
+    localStorage.removeItem('smartSurvey_postScore');
+    localStorage.removeItem('smartSurvey_studentName');
+    
+    const preQuiz = document.querySelector('[data-quiz="pre"]');
+    if (preQuiz) {
+      preQuiz.querySelectorAll('input[type="radio"]').forEach(r => {
+        r.checked = false;
+        r.disabled = false;
+      });
+      const preScoreBox = document.getElementById('score-pre');
+      if (preScoreBox) preScoreBox.style.display = 'none';
+    }
+    
+    resetQuiz('post');
+    window.location.reload();
+  }
+}
+
+function updateAppFlow() {
+  const lessonsUnlocked = localStorage.getItem('smartSurvey_lessonsUnlocked') === 'true';
+  const posttestUnlocked = localStorage.getItem('smartSurvey_posttestUnlocked') === 'true';
+  const posttestPassed = localStorage.getItem('smartSurvey_posttestPassed') === 'true';
+  const preScore = localStorage.getItem('smartSurvey_preScore') || '0';
+  const postScore = localStorage.getItem('smartSurvey_postScore') || '0';
+
+  const lessonSections = ['intro', 'objectives', 'lesson1', 'lesson2', 'lesson3', 'lesson4', 'lesson5', 'lesson6', 'case'];
+  
+  lessonSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      if (lessonsUnlocked) {
+        el.classList.remove('locked-section');
+      } else {
+        el.classList.add('locked-section');
+      }
+    }
+  });
+
+  const navLinks = {
+    'lesson1': document.getElementById('nav-lesson1'),
+    'lesson2': document.getElementById('nav-lesson2'),
+    'lesson3': document.getElementById('nav-lesson3'),
+    'lesson4': document.getElementById('nav-lesson4'),
+    'lesson5': document.getElementById('nav-lesson5'),
+    'lesson6': document.getElementById('nav-lesson6'),
+    'case': document.getElementById('nav-case'),
+    'posttest': document.getElementById('nav-posttest')
+  };
+
+  for (const [key, link] of Object.entries(navLinks)) {
+    if (link) {
+      if (key === 'posttest') {
+        if (posttestUnlocked) {
+          link.classList.remove('nav-disabled');
+        } else {
+          link.classList.add('nav-disabled');
+        }
+      } else {
+        if (lessonsUnlocked) {
+          link.classList.remove('nav-disabled');
+        } else {
+          link.classList.add('nav-disabled');
+        }
+      }
+    }
+  }
+
+  const heroEnterBtn = document.getElementById('hero-enter-btn');
+  if (heroEnterBtn) {
+    if (lessonsUnlocked) {
+      heroEnterBtn.classList.remove('nav-disabled');
+      heroEnterBtn.setAttribute('href', '#intro');
+    } else {
+      heroEnterBtn.classList.add('nav-disabled');
+      heroEnterBtn.setAttribute('href', '#pretest');
+    }
+  }
+
+  const topScoreWidget = document.getElementById('topScoreWidget');
+  const preScoreVal = document.getElementById('preScoreVal');
+  const topPostScoreBadge = document.getElementById('topPostScoreBadge');
+  const postScoreVal = document.getElementById('postScoreVal');
+
+  if (lessonsUnlocked) {
+    if (topScoreWidget) topScoreWidget.style.display = 'flex';
+    if (preScoreVal) preScoreVal.innerText = preScore;
+  } else {
+    if (topScoreWidget) topScoreWidget.style.display = 'none';
+  }
+
+  if (posttestPassed) {
+    if (topPostScoreBadge) topPostScoreBadge.style.display = 'inline-flex';
+    if (postScoreVal) postScoreVal.innerText = postScore;
+  } else {
+    if (topPostScoreBadge) topPostScoreBadge.style.display = 'none';
+  }
+
+  const studyConfirmCard = document.getElementById('studyConfirmCard');
+  const posttestSection = document.getElementById('posttest');
+
+  if (lessonsUnlocked) {
+    if (posttestUnlocked) {
+      if (studyConfirmCard) studyConfirmCard.style.display = 'none';
+      if (posttestSection) posttestSection.classList.remove('locked-section');
+    } else {
+      if (studyConfirmCard) studyConfirmCard.style.display = 'block';
+      if (posttestSection) posttestSection.classList.add('locked-section');
+    }
+  } else {
+    if (studyConfirmCard) studyConfirmCard.style.display = 'none';
+    if (posttestSection) posttestSection.classList.add('locked-section');
+  }
+
+  const printCertificateWrapper = document.getElementById('printCertificateWrapper');
+  if (posttestPassed) {
+    if (printCertificateWrapper) printCertificateWrapper.style.display = 'block';
+    
+    const certPreScore = document.getElementById('certPreScore');
+    const certPostScore = document.getElementById('certPostScore');
+    const certImprovement = document.getElementById('certImprovement');
+    
+    if (certPreScore) certPreScore.innerText = preScore;
+    if (certPostScore) certPostScore.innerText = postScore;
+    if (certImprovement) {
+      const diff = parseInt(postScore) - parseInt(preScore);
+      if (diff > 0) {
+        certImprovement.innerText = `+${diff} ข้อ (พัฒนาขึ้น)`;
+        certImprovement.style.color = 'var(--green)';
+      } else if (diff === 0) {
+        certImprovement.innerText = `เท่าเดิม`;
+        certImprovement.style.color = 'var(--muted)';
+      } else {
+        certImprovement.innerText = `${diff} ข้อ`;
+        certImprovement.style.color = 'var(--red)';
+      }
+    }
+  } else {
+    if (printCertificateWrapper) printCertificateWrapper.style.display = 'none';
+  }
+
+  // Pre-test display toggles
+  const pretestSection = document.getElementById('pretest');
+  const navPretest = document.getElementById('nav-pretest');
+  if (lessonsUnlocked) {
+    if (pretestSection) pretestSection.style.display = 'none';
+    if (navPretest) navPretest.style.display = 'none';
+  } else {
+    if (pretestSection) pretestSection.style.display = '';
+    if (navPretest) navPretest.style.display = '';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Shuffle options for both pre and post tests
+  shuffleQuizOptions('pre');
+  shuffleQuizOptions('post');
+
+  const nameInput = document.getElementById('studentNameInput');
+  const certName = document.getElementById('certStudentName');
+  if (nameInput && certName) {
+    const savedName = localStorage.getItem('smartSurvey_studentName');
+    if (savedName) {
+      nameInput.value = savedName;
+      certName.innerText = savedName;
+    }
+    nameInput.addEventListener('input', (e) => {
+      const val = e.target.value.trim() || '[กรอกชื่อของคุณด้านล่าง]';
+      certName.innerText = val;
+      localStorage.setItem('smartSurvey_studentName', e.target.value);
+    });
+  }
+
+  if (localStorage.getItem('smartSurvey_lessonsUnlocked') === 'true') {
+    const preQuiz = document.querySelector('[data-quiz="pre"]');
+    if (preQuiz) {
+      preQuiz.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.disabled = true;
+      });
+      const preScore = localStorage.getItem('smartSurvey_preScore') || 0;
+      const prePercent = Math.round(preScore / 20 * 100);
+      const preScoreBox = document.getElementById('score-pre');
+      if (preScoreBox) {
+        preScoreBox.style.display = 'block';
+        preScoreBox.innerHTML = `คะแนน Pre-Test ของคุณ: ${preScore}/20 (${prePercent}%) 🔓 ปลดล็อกบทเรียนแล้ว`;
+      }
+    }
+  }
+
+  initLightbox();
+  updateAppFlow();
+});
+
+window.addEventListener('scroll',()=>{const h=document.documentElement; const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100; document.getElementById('progressBar').style.width=scrolled+'%';});
+</script></body></html>
